@@ -1,0 +1,27 @@
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Mobile & tablet*/
+@media (max-width: 768px) {
+  .nav {
+    position: absolute;
+    top: 64px;
+    right: 0;
+    background: #111;
+    width: 200px;
+    flex-direction: column;
+    padding: 20px;
+    display: none;
+  }
+
+  .navOpen {
+    display: flex;
+  }
+  .hamburger {
+    display: block;
+  }
+}
