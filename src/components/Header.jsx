@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./Header.module.css";
 import { useState } from "react";
 
 function Header() {
+  const location = useLocation();
   const [menuStatus, setMenuStatus] = useState(false);
-  const [menuActive, setMenuActive] = useState("home")
 
   const handleToggleButton = () => {
     setMenuStatus(!menuStatus);
@@ -22,7 +22,7 @@ function Header() {
           to="/"
           className={styles.logo}
         >
-          <img src="images/clinicLogo1.png" alt="logo" />
+          <img src="images/clinicLogo.png" alt="logo" />
         </Link>{" "}
         <nav
           className={
@@ -31,32 +31,32 @@ function Header() {
         >
           <ul className="nav nav-pills">
             {" "}
-            <li className={`nav-item ${menuActive === "home" ? styles.menuHighlight : null}`}>
+            <li className={`nav-item ${location.pathname === "/" ? styles.menuHighlight : null}`}>
               <Link
                 to="/"
                 aria-current="page"
-                onClick={() => {closeMenu(); setMenuActive("home")}}
+                onClick={() => {closeMenu()}}
               >
                 Home
               </Link>
             </li>{" "}
-            <li className={`nav-item ${menuActive === "about" ? styles.menuHighlight : null}`}>
-              <Link to="/about-us" onClick={() => {closeMenu(); setMenuActive("about");}}>
+            <li className={`nav-item ${location.pathname === "/about-us" ? styles.menuHighlight : null}`}>
+              <Link to="/about-us" onClick={() => {closeMenu()}}>
                 About us
               </Link>
             </li>{" "}
-            <li className={`nav-item ${menuActive === "services" ? styles.menuHighlight : null}`}>
-              <Link to="/services" onClick={() => {closeMenu(); setMenuActive("services");}}>
+            <li className={`nav-item ${location.pathname === "/services" ? styles.menuHighlight : null}`}>
+              <Link to="/services" onClick={() => {closeMenu()}}>
                 Services
               </Link>
             </li>{" "}
-            <li className={`nav-item ${menuActive === "doctors" ? styles.menuHighlight : null}`}>
-              <Link to="/our-doctors" onClick={() => {closeMenu(); setMenuActive("doctors");}}>
+            <li className={`nav-item ${location.pathname === "/our-doctors" ? styles.menuHighlight : null}`}>
+              <Link to="/our-doctors" onClick={() => {closeMenu()}}>
                 Our Doctors
               </Link>
             </li>{" "}
-            <li className={`nav-item ${menuActive === "contact" ? styles.menuHighlight : null}`}>
-              <Link to="/contact-us" onClick={() => {closeMenu(); setMenuActive("contact");}}>
+            <li className={`nav-item ${location.pathname === "/contact-us" ? styles.menuHighlight : null}`}>
+              <Link to="/contact-us" onClick={() => {closeMenu()}}>
                 Contact us
               </Link>
             </li>{" "}

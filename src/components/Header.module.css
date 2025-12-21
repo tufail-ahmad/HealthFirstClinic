@@ -2,8 +2,8 @@
   background-color: var(--primary-color);
   display: flex;
   align-items: center;
-  height: 80px;
-  padding: 42px 30px;
+  height: 75px;
+  padding: 0 40px;
 }
 
 .header a {
@@ -41,22 +41,20 @@
 
 .logo {
   background-color: white;
-  padding: 5px 20px;
+  padding: 5px 10px;
   border-radius: 5px;
 }
 
 .logo img{
-  width: 100px;
+  width: 185px;
   object-fit: contain;
 }
-
-  /* Overlay background */
 
 
 /* min-width 481 and max-width 768px */
 @media screen and (min-width: 481px) and (max-width: 768px)  {
   .header {
-    height: 60px;
+    height: 55px;
     display: flex;
     align-items: center;
     padding: 35px 15px;
@@ -138,12 +136,12 @@
 
   .logo {
   background-color: white;
-  padding: 5px 20px;
+  padding: 5px 10px;
   border-radius: 5px;
 }
 
 .logo img{
-  width: 80px;
+  width: 165px;
   object-fit: contain;
 }
 }
@@ -151,7 +149,7 @@
 /* min-width 375px and max-width 480px*/
 @media screen and (min-width: 375px) and (max-width: 480px)  {
   .header {
-    height: 50px;
+    height: 45px;
     display: flex;
     align-items: center;
     padding: 30px 15px;
@@ -234,12 +232,12 @@
 
   .logo {
   background-color: white;
-  padding: 5px 20px;
+  padding: 5px 10px;
   border-radius: 5px;
 }
 
 .logo img{
-  width: 65px;
+  width: 140px;
   object-fit: contain;
 }
 }
@@ -247,7 +245,7 @@
 /* min-width 250 and max-width 374px*/
 @media screen and (min-width: 250px) and (max-width: 374px)  {
   .header {
-    height: 40px;
+    height: 30px;
     display: flex;
     align-items: center;
     padding: 25px 15px;
@@ -329,12 +327,12 @@
 
   .logo {
   background-color: white;
-  padding: 5px 12px;
+  padding: 5px 8px;
   border-radius: 5px;
 }
 
 .logo img{
-  width: 50px;
+  width: 105px;
   object-fit: contain;
 }
 }
