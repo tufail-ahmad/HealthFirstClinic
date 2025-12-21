@@ -1,5 +1,52 @@
-.logo {
-  width: 180px;
-  height: 50px;
-  object-fit: contain;
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins" sans-serif;
+  scroll-behavior: smooth;
+
 }
+
+html {
+  font-size: 10px;
+  overflow-x: hidden;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+
+:root {
+  /* Brand Colors */
+  --primary-color: #1e88e5;      /* Blue (Medical Trust) */
+  --secondary-color: #43a047;    /* Green (Health) */
+
+  /* Text Colors */
+  --text-primary: #212121;       /* Main text */
+  --text-secondary: #616161;     /* Paragraph text */
+  --text-light: #ffffff;         /* White text */
+
+  /* Background Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f7fa;
+  --bg-light: #e3f2fd;
+
+  /* Border & Shadow */
+  --border-color: #e0e0e0;
+
+  /* Status Colors */
+  --success-color: #2e7d32;
+  --error-color: #d32f2f;
+  --warning-color: #f9a825;
+}
+

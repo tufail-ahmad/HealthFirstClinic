@@ -4,6 +4,8 @@ import { useState } from "react";
 
 function Header() {
   const [menuStatus, setMenuStatus] = useState(false);
+  const [menuActive, setMenuActive] = useState("home")
+
   const handleToggleButton = () => {
     setMenuStatus(!menuStatus);
   };
@@ -14,13 +16,13 @@ function Header() {
 
   return (
     <>
-      <header className="d-flex flex-wrap justify-content-center py-3 border-bottom px-lg-5">
+      <header className={styles.header}>
         {" "}
         <Link
           to="/"
-          className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+          className={styles.logo}
         >
-          <img className="logo" src="images/clinicLogo.png" alt="logo" />
+          <img src="images/clinicLogo1.png" alt="logo" />
         </Link>{" "}
         <nav
           className={
@@ -29,33 +31,32 @@ function Header() {
         >
           <ul className="nav nav-pills">
             {" "}
-            <li className="nav-item">
+            <li className={`nav-item ${menuActive === "home" ? styles.menuHighlight : null}`}>
               <Link
                 to="/"
-                className="nav-link active"
                 aria-current="page"
-                onClick={closeMenu}
+                onClick={() => {closeMenu(); setMenuActive("home")}}
               >
                 Home
               </Link>
             </li>{" "}
-            <li className="nav-item">
-              <Link to="/about-us" className="nav-link" onClick={closeMenu}>
+            <li className={`nav-item ${menuActive === "about" ? styles.menuHighlight : null}`}>
+              <Link to="/about-us" onClick={() => {closeMenu(); setMenuActive("about");}}>
                 About us
               </Link>
             </li>{" "}
-            <li className="nav-item">
-              <Link to="/services" className="nav-link" onClick={closeMenu}>
+            <li className={`nav-item ${menuActive === "services" ? styles.menuHighlight : null}`}>
+              <Link to="/services" onClick={() => {closeMenu(); setMenuActive("services");}}>
                 Services
               </Link>
             </li>{" "}
-            <li className="nav-item">
-              <Link to="/our-doctors" className="nav-link" onClick={closeMenu}>
+            <li className={`nav-item ${menuActive === "doctors" ? styles.menuHighlight : null}`}>
+              <Link to="/our-doctors" onClick={() => {closeMenu(); setMenuActive("doctors");}}>
                 Our Doctors
               </Link>
             </li>{" "}
-            <li className="nav-item">
-              <Link to="/contact-us" className="nav-link" onClick={closeMenu}>
+            <li className={`nav-item ${menuActive === "contact" ? styles.menuHighlight : null}`}>
+              <Link to="/contact-us" onClick={() => {closeMenu(); setMenuActive("contact");}}>
                 Contact us
               </Link>
             </li>{" "}
@@ -63,9 +64,12 @@ function Header() {
         </nav>{" "}
         <div className={styles.hamburger}>
           <button onClick={handleToggleButton}>
-            {menuStatus ? <span>&times;</span> : <span>&#9776;</span>}
+            {menuStatus ? <div className={styles.cancel}><span >&times;</span></div> : <div style={{marginRight: '10px'}}><span>&#9776;</span></div>}
           </button>
         </div>
+
+        {/* overlay */}
+        {menuStatus && <div className={styles.overlay} onClick={handleToggleButton}></div>}
       </header>
     </>
   );
