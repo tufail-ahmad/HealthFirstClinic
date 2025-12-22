@@ -1,10 +1,17 @@
 import { Link, useLocation } from "react-router-dom";
 import styles from "./Header.module.css";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function Header() {
   const location = useLocation();
   const [menuStatus, setMenuStatus] = useState(false);
+  const visitedOtherPage = useRef(false);
+
+  useEffect(() => {
+    if (location.pathname !== "/") {
+      visitedOtherPage.current = true;
+    }
+  }, [location.pathname]);
 
   const handleToggleButton = () => {
     setMenuStatus(!menuStatus);
@@ -18,10 +25,7 @@ function Header() {
     <>
       <header className={styles.header}>
         {" "}
-        <Link
-          to="/"
-          className={styles.logo}
-        >
+        <Link to="/" className={styles.logo}>
           <img src="images/clinicLogo.png" alt="logo" />
         </Link>{" "}
         <nav
@@ -29,34 +33,82 @@ function Header() {
             menuStatus ? `${styles["mobile-menu"]}` : `${styles["menu-web"]}`
           }
         >
-          <ul className="nav nav-pills">
+          <ul className="nav nav-pills gap-2">
             {" "}
-            <li className={`nav-item ${location.pathname === "/" ? styles.menuHighlight : null}`}>
+            <li
+              className={`nav-item ${
+                location.pathname === "/" && visitedOtherPage.current
+                  ? styles.menuHighlight
+                  : null
+              }`}
+            >
               <Link
                 to="/"
                 aria-current="page"
-                onClick={() => {closeMenu()}}
+                onClick={() => {
+                  closeMenu();
+                }}
               >
                 Home
               </Link>
             </li>{" "}
-            <li className={`nav-item ${location.pathname === "/about-us" ? styles.menuHighlight : null}`}>
-              <Link to="/about-us" onClick={() => {closeMenu()}}>
+            <li
+              className={`nav-item ${
+                location.pathname === "/about-us" ? styles.menuHighlight : null
+              }`}
+            >
+              <Link
+                to="/about-us"
+                onClick={() => {
+                  closeMenu();
+                }}
+              >
                 About us
               </Link>
             </li>{" "}
-            <li className={`nav-item ${location.pathname === "/services" ? styles.menuHighlight : null}`}>
-              <Link to="/services" onClick={() => {closeMenu()}}>
+            <li
+              className={`nav-item ${
+                location.pathname === "/services" ? styles.menuHighlight : null
+              }`}
+            >
+              <Link
+                to="/services"
+                onClick={() => {
+                  closeMenu();
+                }}
+              >
                 Services
               </Link>
             </li>{" "}
-            <li className={`nav-item ${location.pathname === "/our-doctors" ? styles.menuHighlight : null}`}>
-              <Link to="/our-doctors" onClick={() => {closeMenu()}}>
+            <li
+              className={`nav-item ${
+                location.pathname === "/our-doctors"
+                  ? styles.menuHighlight
+                  : null
+              }`}
+            >
+              <Link
+                to="/our-doctors"
+                onClick={() => {
+                  closeMenu();
+                }}
+              >
                 Our Doctors
               </Link>
             </li>{" "}
-            <li className={`nav-item ${location.pathname === "/contact-us" ? styles.menuHighlight : null}`}>
-              <Link to="/contact-us" onClick={() => {closeMenu()}}>
+            <li
+              className={`nav-item ${
+                location.pathname === "/contact-us"
+                  ? styles.menuHighlight
+                  : null
+              }`}
+            >
+              <Link
+                to="/contact-us"
+                onClick={() => {
+                  closeMenu();
+                }}
+              >
                 Contact us
               </Link>
             </li>{" "}
@@ -64,12 +116,21 @@ function Header() {
         </nav>{" "}
         <div className={styles.hamburger}>
           <button onClick={handleToggleButton}>
-            {menuStatus ? <div className={styles.cancel}><span >&times;</span></div> : <div style={{marginRight: '10px'}}><span>&#9776;</span></div>}
+            {menuStatus ? (
+              <div className={styles.cancel}>
+                <span>&times;</span>
+              </div>
+            ) : (
+              <div style={{ marginRight: "10px" }}>
+                <span>&#9776;</span>
+              </div>
+            )}
           </button>
         </div>
-
         {/* overlay */}
-        {menuStatus && <div className={styles.overlay} onClick={handleToggleButton}></div>}
+        {menuStatus && (
+          <div className={styles.overlay} onClick={handleToggleButton}></div>
+        )}
       </header>
     </>
   );

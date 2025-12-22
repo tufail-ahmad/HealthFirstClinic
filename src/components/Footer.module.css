@@ -1,4 +1,5 @@
 .footer {
+  display: flex;
   margin-top: 35px;
   background: var(--primary-color);
   padding: 20px 0 20px 50px;
@@ -9,21 +10,15 @@
 }
 
 .left-column {
-  margin-right: 40px;
-}
-
-.middle-column {
-  margin-right: 40px;
-}
-
-.left-column, .middle-column, .right-column {
-  padding: 10px;
+  width: 35%;
+  padding: 20px;
 }
 
 .left-column p {
   font-size: 1.8rem;
-  margin-top: 10px;
+  margin: 10px 0 20px 0;
   line-height: 20px;
+  padding-right: 10px;
   color: var(--text-light);
 }
 
@@ -51,22 +46,40 @@
   color: #1f7af0;
 }
 
-.middle-column h5, .right-column  h5 {
+.middle-right-col-container {
+  display: flex;
+  flex-grow: 1;
+}
+
+.middle-column {
+  width: 30%;
+  padding: 20px;
+}
+
+.right-column {
+  flex-grow: 1;
+  padding: 20px 20px 20px 0;
+}
+
+.middle-column h5,
+.right-column h5 {
   font-size: 2.2rem;
   color: #ba0310;
 }
 
 .list {
-  margin-top: 20px;
+  margin-top: 15px;
   padding-left: 10px;
 }
 
 .list li {
   font-size: 1.6rem;
+  margin-bottom: 5px;
 }
 
 .list li a {
   color: var(--text-light);
+  display: inline-block;
 }
 
 .copyWright {
@@ -74,10 +87,210 @@
   justify-content: center;
   align-items: center;
   background: #2c6da5;
-  padding: 10px 0 10px 50px;
+  padding-top: 10px;
 }
 
 .copyWright p {
   font-size: 1.6rem;
   color: var(--text-light);
+}
+
+/* min-width 481 and max-width 768px */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .logo img {
+    width: 140px;
+  }
+
+  .iconList li {
+    width: 40px;
+    height: 40px;
+  }
+
+  .iconList li a {
+    position: relative;
+    bottom: 2.5px;
+    left: 8px;
+  }
+
+  .left-column {
+    padding: 10px;
+  }
+
+  .left-column p {
+    margin: 5px 0 15px 0;
+    font-size: 1.6rem;
+  }
+
+  .middle-right-col-container {
+    display: flex;
+    flex-grow: 1;
+  }
+
+  .middle-column {
+    width: 40%;
+    padding: 20px;
+  }
+
+  .right-column {
+    flex-grow: 1;
+    padding: 20px 20px 20px 0;
+  }
+
+  .middle-column h5,
+  .right-column h5 {
+    font-size: 2rem;
+  }
+
+  .list {
+    margin-top: 10px;
+  }
+
+  .list li {
+    font-size: 1.4rem;
+  }
+
+  .copyWright {
+    padding-top: 8px;
+  }
+
+  .copyWright p {
+    font-size: 1.4rem;
+  }
+}
+
+/* min-width 375px and max-width 480px*/
+@media screen and (min-width: 375px) and (max-width: 480px) {
+  .footer {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .left-column {
+    width: 100%;
+  }
+
+  .logo img {
+    width: 120px;
+  }
+
+  .left-column p {
+    font-size: 1.7rem;
+    margin: 5px 0 10px 0;
+    line-height: 20px;
+    padding-right: 20px;
+  }
+
+  .iconList li {
+    width: 38px;
+    height: 38px;
+  }
+
+  .iconList li a {
+    position: relative;
+    bottom: 1px;
+    left: 7.5px;
+  }
+
+  .middle-right-col-container {
+    display: flex;
+    padding-left: 20px;
+  }
+
+  .middle-column,
+  .right-column {
+    width: 40%;
+    padding: 0;
+  }
+  .middle-column h5,
+  .right-column h5 {
+    font-size: 2.1rem;
+  }
+
+  .list {
+    margin-top: 10px;
+  }
+
+  .list li {
+    font-size: 1.6rem;
+  }
+
+  .copyWright {
+    padding-top: 8px;
+  }
+
+  .copyWright p {
+    font-size: 1.4rem;
+  }
+}
+
+/* min-width 250 and max-width 374px*/
+@media screen and (min-width: 250px) and (max-width: 374px) {
+  .footer {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .left-column {
+    width: 100%;
+    padding-bottom: 10px;
+  }
+
+  .logo img {
+    width: 110px;
+  }
+
+  .left-column p {
+    font-size: 1.6rem;
+    margin: 5px 0 10px;
+    line-height: 16px;
+    padding-right: 20px;
+  }
+
+  .iconList li {
+    width: 35px;
+    height: 35px;
+  }
+
+  .iconList li a {
+    position: relative;
+    bottom: 1px;
+    left: 7px;
+  }
+
+  .middle-right-col-container {
+    display: flex;
+    padding-left: 20px;
+    gap: 10px;
+  }
+
+  .middle-column {
+    width: 40%;
+    padding: 0;
+  }
+
+  .right-column {
+    padding: 0;
+    flex-grow: 1;
+  }
+
+  .middle-column h5,
+  .right-column h5 {
+    font-size: 2.1rem;
+  }
+
+  .list {
+    margin-top: 10px;
+  }
+
+  .list li {
+    font-size: 1.6rem;
+  }
+
+  .copyWright {
+    padding-top: 8px;
+  }
+
+  .copyWright p {
+    font-size: 1.2rem;
+  }
 }
