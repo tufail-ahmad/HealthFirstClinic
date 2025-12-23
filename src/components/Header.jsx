@@ -26,7 +26,7 @@ function Header() {
       <header className={styles.header}>
         {" "}
         <Link to="/" className={styles.logo}>
-          <img src="images/clinicLogo.png" alt="logo" />
+          <img src="/images/clinicLogo.png" alt="logo" />
         </Link>{" "}
         <nav
           className={

@@ -14,7 +14,7 @@ function Footer() {
         {" "}
         <div className={`mb-3 ${styles["left-column"]}`}>
           <div className={styles.logo}>
-            <img src="images/clinicLogo1.png" alt="logo" />
+            <img src="/images/clinicLogo1.png" alt="logo" />
           </div>
           <p>
             Your trusted family healthcare clinic providing quality treatment,
@@ -90,32 +90,47 @@ function Footer() {
             <ul className={`nav flex-column ${styles.list}`}>
               {" "}
               <li className="nav-item">
-                <Link to="#" className="nav-link p-0">
+                <Link
+                  to="/services/general-consultation"
+                  className="nav-link p-0"
+                >
                   General Consultation
                 </Link>
               </li>{" "}
               <li className="nav-item">
-                <Link to="/our-doctors" className="nav-link p-0">
+                <Link to="/services/child-care" className="nav-link p-0">
                   Child Care (Pediatrics)
                 </Link>
               </li>{" "}
               <li className="nav-item">
-                <Link to="/services" className="nav-link p-0">
+                <Link
+                  to="/services/physiotherapy-rehabilitation"
+                  className="nav-link p-0"
+                >
                   Physiotherapy & Rehabilitation
                 </Link>
               </li>{" "}
               <li className="nav-item">
-                <Link to="/about-us" className="nav-link p-0">
+                <Link
+                  to="/services/general-laparoscopic-surgery"
+                  className="nav-link p-0"
+                >
                   General & Laparoscopic Surgery
                 </Link>
               </li>{" "}
               <li className="nav-item">
-                <Link to="/contact-us" className="nav-link p-0">
+                <Link
+                  to="/services/radiology-diagnostics"
+                  className="nav-link p-0"
+                >
                   Radiology & Diagnostics
                 </Link>
               </li>{" "}
               <li className="nav-item">
-                <Link to="/contact-us" className="nav-link p-0">
+                <Link
+                  to="/services/pathology-Laboratory-tests"
+                  className="nav-link p-0"
+                >
                   Pathology & Laboratory Tests
                 </Link>
               </li>{" "}
