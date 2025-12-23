@@ -1,0 +1,84 @@
+.bannerContainer {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 24px rgba(58, 58, 163, 0.842);
+  background: url(/images/heroBannerImg.png) no-repeat center center / cover;
+  display: flex;
+}
+
+.leftColumn {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 200px;
+}
+
+.mainHeading {
+  font-size: 3.6rem;
+  color: #042d66e5;
+  font-weight: 700;
+  margin-bottom: -8px;
+}
+
+.leftColumn p {
+  width: 400px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 20px;
+  margin: 15px 0;
+  color: #000000;
+}
+
+.button-container {
+  display: flex;
+  gap: 20px;
+}
+
+.primaryButton {
+  width: 120px;
+  font-size: 1.6rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  font-weight: 500;
+  background-color: transparent;
+  color: var(--text-light);
+  padding: 5px 10px;
+  height: 35px;
+  transition: all 0.3s ease;
+}
+
+.primaryButton:hover {
+  background-color: #0a4f8b;
+  border: 1px solid #0a4f8b;
+}
+
+.secondaryButton {
+  width: 220px;
+  font-size: 1.6rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  font-weight: 500;
+  background-color: #0a4f8b;
+  color: var(--text-light);
+  padding: 5px 20px;
+  height: 35px;
+  transition: all 0.3s ease;
+}
+
+.secondaryButton:hover {
+  background-color: white;
+  color: #000000;
+}
+
+.rightColumn {
+  flex-basis: 50%;
+  padding: 20px 60px 0 20px;
+}
+
+.rightColumn img {
+  width: 95%;
+  height: 100%;
+}

@@ -2,8 +2,9 @@
   background-color: var(--primary-color);
   display: flex;
   align-items: center;
-  height: 75px;
+  height: 80px;
   padding: 0 40px;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .menu-web {
@@ -46,7 +47,7 @@
 
 .logo {
   background-color: white;
-  padding: 5px 10px;
+  padding: 3px 10px;
   border-radius: 5px;
 }
 
@@ -187,6 +188,48 @@
   .logo img {
     width: 165px;
     object-fit: contain;
+  }
+
+  /* sub menu item */
+  .services-item {
+    position: relative;
+  }
+
+  /* Dropdown Menu ul */
+
+  .dropdown {
+    list-style: none;
+    position: absolute;
+    top: 32px;
+    left: -80px;
+    display: none;
+    background: var(--primary-color);
+    z-index: 1000;
+    width: 300px;
+    padding: 0;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 24px rgba(58, 58, 163, 0.842);
+  }
+
+  .dropdown.show {
+    display: block;
+  }
+
+  .dropdown.show li {
+    width: 100%;
+  }
+
+  .dropdown.show li a {
+    display: block;
+    padding: 5px 0;
+    color: var(--text-light);
+    font-size: 1.6rem;
+    display: inline-block;
+  }
+
+  .dropdown.show li a:hover {
+    color: red;
   }
 }
 

@@ -1,0 +1,5 @@
+.heroBanner {
+  background-color: var(--bg-secondary);
+  padding: 20px;
+  height: 500px;
+}

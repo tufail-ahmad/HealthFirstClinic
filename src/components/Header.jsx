@@ -3,6 +3,7 @@ import styles from "./Header.module.css";
 import { useEffect, useRef, useState } from "react";
 
 function Header() {
+  const isMobile = window.innerWidth <= 768;
   const location = useLocation();
   const [menuStatus, setMenuStatus] = useState(false);
   const [open, setOpen] = useState(false);
@@ -11,13 +12,17 @@ function Header() {
 
   const handleMouseEnter = () => {
     clearTimeout(timerRef.current);
-    setOpen(true);
+    if (!isMobile) setOpen(true);
   };
 
   const handleMouseLeave = () => {
     timerRef.current = setTimeout(() => {
-      setOpen(false);
+      if (!isMobile) setOpen(false);
     }, 50);
+  };
+
+  const handleOnClick = () => {
+    if (isMobile) setOpen((prev) => !prev);
   };
 
   useEffect(() => {
@@ -85,6 +90,7 @@ function Header() {
               }`}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
+              onClick={handleOnClick}
             >
               <Link
                 to="/services"
@@ -102,6 +108,29 @@ function Header() {
                 <li>
                   <Link to="/services/general-consultation">
                     General Consultation
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services/child-care">Child Care (Pediatrics)</Link>
+                </li>
+                <li>
+                  <Link to="/services/physiotherapy-rehabilitation">
+                    Physiotherapy & Rehabilitation
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services/general-laparoscopic-surgery">
+                    General & Laparoscopic Surgery
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services/radiology-diagnostics">
+                    Radiology & Diagnostics
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services/pathology-Laboratory-tests">
+                    Pathology & Laboratory Tests
                   </Link>
                 </li>
               </ul>
