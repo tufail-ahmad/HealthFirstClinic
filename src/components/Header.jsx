@@ -5,7 +5,20 @@ import { useEffect, useRef, useState } from "react";
 function Header() {
   const location = useLocation();
   const [menuStatus, setMenuStatus] = useState(false);
+  const [open, setOpen] = useState(false);
   const visitedOtherPage = useRef(false);
+  const timerRef = useRef(null);
+
+  const handleMouseEnter = () => {
+    clearTimeout(timerRef.current);
+    setOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timerRef.current = setTimeout(() => {
+      setOpen(false);
+    }, 50);
+  };
 
   useEffect(() => {
     if (location.pathname !== "/") {
@@ -67,9 +80,11 @@ function Header() {
               </Link>
             </li>{" "}
             <li
-              className={`nav-item ${
+              className={`nav-item ${styles["services-item"]} ${
                 location.pathname === "/services" ? styles.menuHighlight : null
               }`}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
               <Link
                 to="/services"
@@ -77,8 +92,19 @@ function Header() {
                   closeMenu();
                 }}
               >
-                Services
+                Services <span className={styles.arrow}>&#9662;</span>
               </Link>
+              <ul
+                className={`${styles.dropdown} ${
+                  open ? `${styles.show}` : null
+                }`}
+              >
+                <li>
+                  <Link to="/services/general-consultation">
+                    General Consultation
+                  </Link>
+                </li>
+              </ul>
             </li>{" "}
             <li
               className={`nav-item ${
