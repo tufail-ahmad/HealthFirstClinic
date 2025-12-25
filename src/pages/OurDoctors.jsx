@@ -1,5 +1,11 @@
+import HeroBanner2 from "../components/HeroBanner2";
+
 function OurDoctors() {
-  return <div>Our Doctors Page</div>;
+  return (
+    <>
+      <HeroBanner2 />
+    </>
+  );
 }
 
 export default OurDoctors;

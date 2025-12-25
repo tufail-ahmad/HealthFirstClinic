@@ -1,5 +1,9 @@
-import React from "react";
+import HeroBanner2 from "../../components/HeroBanner2";
 
 export default function PathologyLaboratoryTests() {
-  return <div>Pathology Laboratory Tests</div>;
+  return (
+    <>
+      <HeroBanner2 />
+    </>
+  );
 }

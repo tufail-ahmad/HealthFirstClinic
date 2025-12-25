@@ -1,11 +1,10 @@
-import { Outlet } from "react-router-dom";
+import HeroBanner2 from "../components/HeroBanner2";
 
 function Services() {
   return (
-    <div>
-      <h1>Our Services</h1>
-      <p>Details about the services we offer will be listed here.</p>
-    </div>
+    <>
+      <HeroBanner2 />
+    </>
   );
 }
 

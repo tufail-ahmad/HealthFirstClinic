@@ -1,5 +1,9 @@
-import React from "react";
+import HeroBanner2 from "../../components/HeroBanner2";
 
 export default function ChildCare() {
-  return <div>ChildCare</div>;
+  return (
+    <>
+      <HeroBanner2 />
+    </>
+  );
 }
