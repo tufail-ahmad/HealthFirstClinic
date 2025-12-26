@@ -1,9 +1,16 @@
 import HeroBanner2 from "../../components/HeroBanner2";
+import BreadcrumbHeader from "../../components/BreadcrumbHeader";
+import { useLocation } from "react-router-dom";
 
 export default function PathologyLaboratoryTests() {
+  const location = useLocation();
+
   return (
     <>
       <HeroBanner2 />
+      {location.pathname === "/services/pathology-Laboratory-tests" && (
+        <BreadcrumbHeader pageName="Pathology Laboratory Tests" />
+      )}
     </>
   );
 }
