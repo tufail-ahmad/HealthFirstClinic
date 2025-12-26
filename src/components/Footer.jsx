@@ -128,7 +128,7 @@ function Footer() {
               </li>{" "}
               <li className="nav-item">
                 <Link
-                  to="/services/pathology-Laboratory-tests"
+                  to="/services/pathology-laboratory-tests"
                   className="nav-link p-0"
                 >
                   Pathology & Laboratory Tests

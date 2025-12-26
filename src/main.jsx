@@ -61,7 +61,7 @@ const router = createBrowserRouter([
         element: <RadiologyDiagnostics />,
       },
       {
-        path: "/services/pathology-Laboratory-tests",
+        path: "/services/pathology-laboratory-tests",
         element: <PathologyLaboratoryTests />,
       },
     ],

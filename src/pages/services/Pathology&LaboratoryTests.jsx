@@ -8,7 +8,7 @@ export default function PathologyLaboratoryTests() {
   return (
     <>
       <HeroBanner2 />
-      {location.pathname === "/services/pathology-Laboratory-tests" && (
+      {location.pathname === "/services/pathology-laboratory-tests" && (
         <BreadcrumbHeader pageName="Pathology Laboratory Tests" />
       )}
     </>

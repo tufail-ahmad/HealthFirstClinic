@@ -129,7 +129,7 @@ function Header() {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/services/pathology-Laboratory-tests">
+                  <Link to="/services/pathology-laboratory-tests">
                     Pathology & Laboratory Tests
                   </Link>
                 </li>
