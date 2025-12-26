@@ -1,3 +1,4 @@
+import AppointmentBtn from "../components/AppointmentBtn";
 import HeroBanner from "../components/HeroBanner";
 import styles from "./Home.module.css";
 
@@ -13,9 +14,7 @@ function Home() {
           </p>
           <div className={styles["button-container"]}>
             <button className={styles.primaryButton}>Contact Us</button>
-            <button className={styles.secondaryButton}>
-              Book an Appointment
-            </button>
+            <AppointmentBtn />
           </div>
         </div>
         <div className={styles.rightColumn}>
