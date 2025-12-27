@@ -12,7 +12,7 @@
   flex-basis: 50%;
   font-size: 3rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-light);
 }
 
 .linkContainer {
@@ -22,8 +22,9 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  border-left: 10px solid #dfdada;
-  border-right: 10px solid #dfdada;
+  background: var(--bg-primary);
+  border-left: 10px solid #e5131c;
+  border-right: 10px solid #e5131c;
   transform: skewX(-20deg);
 }
 
@@ -35,24 +36,28 @@
   transform: skewX(20deg);
   text-decoration: none;
   font-size: 2rem;
-  color: #b00410;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   transition: all 0.2s ease;
 }
 
 .linkContainer span:first-child a:hover {
-  color: #e3f2fd;
+  color: #e5131c;
 }
 
 .linkContainer span:nth-child(2) {
   transform: skewX(20deg);
-  color: var(--text-primary);
+  color: #e5131c;
   font-size: 2rem;
+  font-weight: 500;
 }
 
 .linkContainer span:last-child {
   transform: skewX(20deg);
-  color: var(--text-primary);
+  color: #042549;
   font-size: 2rem;
+  font-weight: 500;
 }
 
 /* min-width 481 and max-width 768px */
@@ -74,7 +79,7 @@
   }
 
   .linkContainer span:first-child a:hover {
-    color: #e3f2fd;
+    color: #e5131c;
   }
 
   .linkContainer span:nth-child(2) {
@@ -90,8 +95,9 @@
 @media screen and (min-width: 375px) and (max-width: 480px) {
   .breadcrumbHeader {
     flex-direction: column;
-    padding: 20px;
+    padding: 22px;
     justify-content: center;
+    gap: 5px;
     height: 60px;
   }
 
@@ -102,7 +108,9 @@
 
   .linkContainer {
     flex-basis: 50%;
+    padding: 11px 0;
     border: none;
+    gap: 5px;
   }
 
   .linkContainer span:first-child a {
@@ -110,7 +118,7 @@
   }
 
   .linkContainer span:first-child a:hover {
-    color: #e3f2fd;
+    color: #e5131c;
   }
 
   .linkContainer span:nth-child(2) {
@@ -128,16 +136,19 @@
     flex-direction: column;
     justify-content: center;
     height: 50px;
-    gap: 20px;
-    padding: 30px 0;
+    gap: 4px;
+    padding: 20px;
   }
 
   .breadcrumbHeader h2 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .linkContainer {
+    flex-basis: 50%;
+    padding: 10px 0;
     border: none;
+    gap: 5px;
   }
 
   .linkContainer span:first-child a {
@@ -145,7 +156,7 @@
   }
 
   .linkContainer span:first-child a:hover {
-    color: #e3f2fd;
+    color: #e5131c;
   }
 
   .linkContainer span:nth-child(2) {
