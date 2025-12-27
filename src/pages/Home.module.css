@@ -1,3 +1,4 @@
+/*=============== Hero Banner Styling ==================*/
 .bannerContainer {
   width: 100%;
   height: 100%;
@@ -65,8 +66,49 @@
   height: 100%;
 }
 
+/*=============== About Section Styling ==================*/
+.about-section {
+  display: flex;
+  gap: 30px;
+  padding: 60px 20px;
+}
+
+.imgContainer {
+  flex-basis: 48%;
+  padding: 20px;
+}
+
+.imgContainer img {
+  width: 100%;
+  height: 350px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 5px #9bccecd8;
+  border: 1px solid #e0e0e0;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-basis: 48%;
+  padding: 20px;
+}
+
+.contentContainer h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #0d3d74;
+}
+
+.contentContainer p {
+  font-size: 1.8rem;
+  line-height: 22px;
+  color: var(--text-secondary);
+}
+
 /* min-width 481 and max-width 768px */
 @media screen and (min-width: 481px) and (max-width: 768px) {
+  /*=============== Hero Banner Styling ==================*/
   .leftColumn {
     flex-basis: 40%;
     padding-left: 50px;
@@ -105,10 +147,41 @@
   .rightColumn img {
     width: 100%;
   }
+
+  /*=============== About Section Styling ==================*/
+  .about-section {
+    gap: 0;
+    padding: 40px 10px;
+  }
+
+  .imgContainer {
+    flex-basis: 48%;
+    padding: 15px;
+  }
+
+  .imgContainer img {
+    height: 300px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 3px #9bccecd8;
+  }
+
+  .contentContainer {
+    padding: 10px;
+  }
+
+  .contentContainer h2 {
+    font-size: 3.2rem;
+  }
+
+  .contentContainer p {
+    font-size: 1.6rem;
+    line-height: 15px;
+  }
 }
 
 /* min-width 375px and max-width 480px*/
 @media screen and (min-width: 375px) and (max-width: 480px) {
+  /*=============== Hero Banner Styling ==================*/
   .leftColumn {
     flex-grow: 1;
     padding: 20px;
@@ -145,10 +218,42 @@
   .rightColumn {
     display: none;
   }
+
+  /*=============== About Section Styling ==================*/
+  .about-section {
+    flex-direction: column-reverse;
+    gap: 0;
+    padding: 25px 10px;
+  }
+
+  .imgContainer {
+    flex-basis: 48%;
+    padding: 10px;
+  }
+
+  .imgContainer img {
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 3px #9bccecd8;
+  }
+
+  .contentContainer {
+    padding: 10px;
+  }
+
+  .contentContainer h2 {
+    font-size: 3.2rem;
+  }
+
+  .contentContainer p {
+    font-size: 1.8rem;
+    line-height: 15px;
+  }
 }
 
 /* min-width 250 and max-width 374px*/
 @media screen and (min-width: 250px) and (max-width: 374px) {
+  /*=============== Hero Banner Styling ==================*/
   .leftColumn {
     flex-grow: 1;
     padding: 20px;
@@ -183,5 +288,29 @@
 
   .rightColumn {
     display: none;
+  }
+
+  /*=============== About Section Styling ==================*/
+  .about-section {
+    flex-direction: column-reverse;
+    gap: 0;
+    padding: 20px 10px;
+  }
+
+  .imgContainer {
+    display: none;
+  }
+
+  .contentContainer {
+    padding: 10px;
+  }
+
+  .contentContainer h2 {
+    font-size: 2.8rem;
+  }
+
+  .contentContainer p {
+    font-size: 1.6rem;
+    line-height: 15px;
   }
 }
