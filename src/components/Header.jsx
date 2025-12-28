@@ -6,33 +6,53 @@ function Header() {
   const location = useLocation();
   const [menuStatus, setMenuStatus] = useState(false);
   const visitedOtherPage = useRef(false);
-  const [open, setOpen] = useState(false);
-  const timerRef = useRef(null);
-  const isDesktop = window.innerWidth > 768;
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-  const handleMouseEnter = () => {
-    if (!isDesktop) return;
-    clearTimeout(timerRef.current);
-    setOpen(true);
-  };
+  //timer ref for mouse leave delay
+  const closeTimer = useRef(null);
 
-  const handleMouseLeave = () => {
-    if (!isDesktop) return;
-    timerRef.current = setTimeout(() => {
-      setOpen(false);
-    }, 50);
-  };
+  // =============== RESIZE EFFECT ==============
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth <= 768;
+      setIsMobile(mobile);
 
-  const handleOnClick = () => {
-    if (!isDesktop) return;
-    setOpen((prev) => !prev);
-  };
+      // 🔑 FORCE RESET
+      setServicesOpen(false);
+      if (!mobile) setMenuStatus(false);
+    };
+
+    handleResize(); // initial
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     if (location.pathname !== "/") {
       visitedOtherPage.current = true;
     }
   }, [location.pathname]);
+
+  const handleMouseEnter = () => {
+    if (isMobile) return;
+
+    clearTimeout(closeTimer.current);
+    setServicesOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    if (isMobile) return;
+
+    closeTimer.current = setTimeout(() => {
+      setServicesOpen(false);
+    }, 50);
+  };
+
+  const handleOnClick = () => {
+    if (!isMobile) return;
+    setServicesOpen((prev) => !prev);
+  };
 
   const handleToggleButton = () => {
     setMenuStatus(!menuStatus);
@@ -88,9 +108,7 @@ function Header() {
               </Link>
             </li>{" "}
             <li
-              className={`nav-item ${styles["services-item"]} ${
-                location.pathname === "/services" ? styles.menuHighlight : null
-              } ${open && !isDesktop ? `${styles.active}` : null}`}
+              className={`nav-item ${styles["services-item"]}`}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
               onClick={handleOnClick}
@@ -99,70 +117,74 @@ function Header() {
                 Services{" "}
                 <span
                   className={`${styles.arrow} ${
-                    open ? `${styles.rotate}` : null
+                    servicesOpen ? `${styles.rotate}` : null
                   }`}
                 >
                   &#9662;
                 </span>
               </span>
-              <ul
-                className={`${styles.dropdown} ${
-                  open ? `${styles.show}` : null
-                }`}
-              >
-                <li
-                  onClick={() => {
-                    closeMenu();
-                  }}
+              {(!isMobile || menuStatus) && (
+                <ul
+                  className={`${styles.dropdown} ${
+                    servicesOpen ? `${styles.show}` : ""
+                  }`}
                 >
-                  <Link to="/services/general-consultation">
-                    General Consultation
-                  </Link>
-                </li>
-                <li
-                  onClick={() => {
-                    closeMenu();
-                  }}
-                >
-                  <Link to="/services/child-care">Child Care (Pediatrics)</Link>
-                </li>
-                <li
-                  onClick={() => {
-                    closeMenu();
-                  }}
-                >
-                  <Link to="/services/physiotherapy-rehabilitation">
-                    Physiotherapy & Rehabilitation
-                  </Link>
-                </li>
-                <li
-                  onClick={() => {
-                    closeMenu();
-                  }}
-                >
-                  <Link to="/services/general-laparoscopic-surgery">
-                    General & Laparoscopic Surgery
-                  </Link>
-                </li>
-                <li
-                  onClick={() => {
-                    closeMenu();
-                  }}
-                >
-                  <Link to="/services/radiology-diagnostics">
-                    Radiology & Diagnostics
-                  </Link>
-                </li>
-                <li
-                  onClick={() => {
-                    closeMenu();
-                  }}
-                >
-                  <Link to="/services/pathology-laboratory-tests">
-                    Pathology & Laboratory Tests
-                  </Link>
-                </li>
-              </ul>
+                  <li
+                    onClick={() => {
+                      closeMenu();
+                    }}
+                  >
+                    <Link to="/services/general-consultation">
+                      General Consultation
+                    </Link>
+                  </li>
+                  <li
+                    onClick={() => {
+                      closeMenu();
+                    }}
+                  >
+                    <Link to="/services/child-care">
+                      Child Care (Pediatrics)
+                    </Link>
+                  </li>
+                  <li
+                    onClick={() => {
+                      closeMenu();
+                    }}
+                  >
+                    <Link to="/services/physiotherapy-rehabilitation">
+                      Physiotherapy & Rehabilitation
+                    </Link>
+                  </li>
+                  <li
+                    onClick={() => {
+                      closeMenu();
+                    }}
+                  >
+                    <Link to="/services/general-laparoscopic-surgery">
+                      General & Laparoscopic Surgery
+                    </Link>
+                  </li>
+                  <li
+                    onClick={() => {
+                      closeMenu();
+                    }}
+                  >
+                    <Link to="/services/radiology-diagnostics">
+                      Radiology & Diagnostics
+                    </Link>
+                  </li>
+                  <li
+                    onClick={() => {
+                      closeMenu();
+                    }}
+                  >
+                    <Link to="/services/pathology-laboratory-tests">
+                      Pathology & Laboratory Tests
+                    </Link>
+                  </li>
+                </ul>
+              )}
             </li>{" "}
             <li
               className={`nav-item ${
