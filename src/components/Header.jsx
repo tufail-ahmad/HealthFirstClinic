@@ -134,7 +134,10 @@ function Header() {
                       closeMenu();
                     }}
                   >
-                    <Link to="/services/general-consultation">
+                    <Link
+                      to="/services/general-consultation"
+                      className={styles.subMenu}
+                    >
                       General Consultation
                     </Link>
                   </li>
@@ -143,7 +146,7 @@ function Header() {
                       closeMenu();
                     }}
                   >
-                    <Link to="/services/child-care">
+                    <Link to="/services/child-care" className={styles.subMenu}>
                       Child Care (Pediatrics)
                     </Link>
                   </li>
@@ -152,7 +155,10 @@ function Header() {
                       closeMenu();
                     }}
                   >
-                    <Link to="/services/physiotherapy-rehabilitation">
+                    <Link
+                      to="/services/physiotherapy-rehabilitation"
+                      className={styles.subMenu}
+                    >
                       Physiotherapy & Rehabilitation
                     </Link>
                   </li>
@@ -161,7 +167,10 @@ function Header() {
                       closeMenu();
                     }}
                   >
-                    <Link to="/services/general-laparoscopic-surgery">
+                    <Link
+                      to="/services/general-laparoscopic-surgery"
+                      className={styles.subMenu}
+                    >
                       General & Laparoscopic Surgery
                     </Link>
                   </li>
@@ -170,7 +179,10 @@ function Header() {
                       closeMenu();
                     }}
                   >
-                    <Link to="/services/radiology-diagnostics">
+                    <Link
+                      to="/services/radiology-diagnostics"
+                      className={styles.subMenu}
+                    >
                       Radiology & Diagnostics
                     </Link>
                   </li>
@@ -179,7 +191,10 @@ function Header() {
                       closeMenu();
                     }}
                   >
-                    <Link to="/services/pathology-laboratory-tests">
+                    <Link
+                      to="/services/pathology-laboratory-tests"
+                      className={styles.subMenu}
+                    >
                       Pathology & Laboratory Tests
                     </Link>
                   </li>
