@@ -1,4 +1,4 @@
-import styles from "./Appointment.module.css";
+import styles from "./AppointmentBtn.module.css";
 
 export default function AppointmentBtn() {
   return (
