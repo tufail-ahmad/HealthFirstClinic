@@ -68,11 +68,6 @@ function Footer() {
                 </Link>
               </li>{" "}
               <li className="nav-item">
-                <Link to="/services" className="nav-link p-0">
-                  Department Services
-                </Link>
-              </li>{" "}
-              <li className="nav-item">
                 <Link to="/about-us" className="nav-link p-0">
                   About Our Clinic
                 </Link>

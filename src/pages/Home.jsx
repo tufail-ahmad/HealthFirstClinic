@@ -1,5 +1,6 @@
 import AppointmentBtn from "../components/AppointmentBtn";
 import HeroBanner from "../components/HeroBanner";
+import ServicesSection from "../components/ServicesSection";
 import styles from "./Home.module.css";
 
 function Home() {
@@ -49,6 +50,7 @@ function Home() {
           </p>
         </div>
       </div>
+      <ServicesSection />
     </>
   );
 }

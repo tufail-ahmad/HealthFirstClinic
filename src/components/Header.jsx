@@ -3,26 +3,29 @@ import styles from "./Header.module.css";
 import { useEffect, useRef, useState } from "react";
 
 function Header() {
-  const isMobile = window.innerWidth <= 768;
   const location = useLocation();
   const [menuStatus, setMenuStatus] = useState(false);
-  const [open, setOpen] = useState(false);
   const visitedOtherPage = useRef(false);
+  const [open, setOpen] = useState(false);
   const timerRef = useRef(null);
+  const isDesktop = window.innerWidth > 768;
 
   const handleMouseEnter = () => {
+    if (!isDesktop) return;
     clearTimeout(timerRef.current);
-    if (!isMobile) setOpen(true);
+    setOpen(true);
   };
 
   const handleMouseLeave = () => {
+    if (!isDesktop) return;
     timerRef.current = setTimeout(() => {
-      if (!isMobile) setOpen(false);
+      setOpen(false);
     }, 50);
   };
 
   const handleOnClick = () => {
-    if (isMobile) setOpen((prev) => !prev);
+    if (!isDesktop) return;
+    setOpen((prev) => !prev);
   };
 
   useEffect(() => {
@@ -87,48 +90,74 @@ function Header() {
             <li
               className={`nav-item ${styles["services-item"]} ${
                 location.pathname === "/services" ? styles.menuHighlight : null
-              }`}
+              } ${open && !isDesktop ? `${styles.active}` : null}`}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
               onClick={handleOnClick}
             >
-              <Link
-                to="/services"
-                onClick={() => {
-                  closeMenu();
-                }}
-              >
-                Services <span className={styles.arrow}>&#9662;</span>
-              </Link>
+              <span className={styles.servicesSpan}>
+                Services{" "}
+                <span
+                  className={`${styles.arrow} ${
+                    open ? `${styles.rotate}` : null
+                  }`}
+                >
+                  &#9662;
+                </span>
+              </span>
               <ul
                 className={`${styles.dropdown} ${
                   open ? `${styles.show}` : null
                 }`}
               >
-                <li>
+                <li
+                  onClick={() => {
+                    closeMenu();
+                  }}
+                >
                   <Link to="/services/general-consultation">
                     General Consultation
                   </Link>
                 </li>
-                <li>
+                <li
+                  onClick={() => {
+                    closeMenu();
+                  }}
+                >
                   <Link to="/services/child-care">Child Care (Pediatrics)</Link>
                 </li>
-                <li>
+                <li
+                  onClick={() => {
+                    closeMenu();
+                  }}
+                >
                   <Link to="/services/physiotherapy-rehabilitation">
                     Physiotherapy & Rehabilitation
                   </Link>
                 </li>
-                <li>
+                <li
+                  onClick={() => {
+                    closeMenu();
+                  }}
+                >
                   <Link to="/services/general-laparoscopic-surgery">
                     General & Laparoscopic Surgery
                   </Link>
                 </li>
-                <li>
+                <li
+                  onClick={() => {
+                    closeMenu();
+                  }}
+                >
                   <Link to="/services/radiology-diagnostics">
                     Radiology & Diagnostics
                   </Link>
                 </li>
-                <li>
+                <li
+                  onClick={() => {
+                    closeMenu();
+                  }}
+                >
                   <Link to="/services/pathology-laboratory-tests">
                     Pathology & Laboratory Tests
                   </Link>
