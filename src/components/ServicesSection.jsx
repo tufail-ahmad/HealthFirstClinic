@@ -2,6 +2,7 @@ import ServiceCard from "./ServiceCard";
 import styles from "./ServicesSection.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { useRef } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -52,6 +53,10 @@ const cardData = [
 ];
 
 export default function ServicesSection() {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+  const dotsRef = useRef(null);
+
   return (
     <>
       <div className={styles["services-section"]}>
@@ -72,18 +77,15 @@ export default function ServicesSection() {
         </div>
         {/* Mobile Carousel */}
         <div className={styles["card-carousel"]}>
-          {/* Outside Controls */}
-          <div className={styles.controls}>
-            <button className="customPrev" aria-label="Previous slide">
-              &#10094;
-            </button>
-            <div className={styles.dotsContainer}>
-              <div className="customPagination"></div>
-            </div>
-            <button className="customNext" aria-label="Next slide">
-              &#10095;
-            </button>
-          </div>
+          {/* Custom Previous Arrow */}
+          <button
+            ref={prevRef}
+            className="nav prev"
+            aria-label="Previous slide"
+          >
+            &#10094;
+          </button>
+          {/* Swiper */}
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={16}
@@ -93,8 +95,17 @@ export default function ServicesSection() {
               delay: 3000, // 3 seconds
               disableOnInteraction: false,
             }}
-            navigation={{ nextEl: ".customNext", prevEl: ".customPrev" }} // arrows
-            pagination={{ el: ".customPagination", clickable: true }} // dots
+            pagination={{ clickable: true }} // dots
+            onSwiper={(swiper) => {
+              setTimeout(() => {
+                swiper.params.navigation.prevEl = prevRef.current;
+                swiper.params.navigation.nextEl = nextRef.current;
+                swiper.params.pagination.el = dotsRef.current;
+                swiper.navigation.destroy();
+                swiper.navigation.init();
+                swiper.navigation.update();
+              });
+            }}
           >
             {cardData.map((item, index) => {
               return (
@@ -109,7 +120,13 @@ export default function ServicesSection() {
               );
             })}
           </Swiper>
+          {/* Custom Next Arrow */}
+          <button ref={nextRef} className="nav next">
+            &#10095;
+          </button>
         </div>
+        {/* Custom Dots */}
+        <div ref={dotsRef} className="custom-dots"></div>
       </div>
     </>
   );
