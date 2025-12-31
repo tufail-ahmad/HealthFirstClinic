@@ -106,6 +106,25 @@
   color: var(--text-secondary);
 }
 
+/*=============== Doctor Section Styling ==================*/
+.doctors-section {
+  padding: 60px 30px;
+  background: var(--bg-secondarys);
+}
+
+.doctors-section h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #0d3d74;
+}
+
+.cards-container {
+  display: flex;
+  gap: 20px;
+}
+
 /* min-width 481 and max-width 768px */
 @media screen and (min-width: 481px) and (max-width: 768px) {
   /*=============== Hero Banner Styling ==================*/

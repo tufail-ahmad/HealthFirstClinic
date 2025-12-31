@@ -1,7 +1,13 @@
 import { Outlet } from "react-router-dom";
+import ScrollToTop from "./ScrollToTop";
 
 function Main() {
-  return <Outlet />;
+  return (
+    <>
+      <ScrollToTop />
+      <Outlet />
+    </>
+  );
 }
 
 export default Main;

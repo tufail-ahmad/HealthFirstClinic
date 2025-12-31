@@ -1,0 +1,25 @@
+.main-section {
+  padding: 60px 20px;
+}
+
+.main-section h2 {
+  font-size: 3.5rem;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.main-section p {
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 0 150px;
+  line-height: 25px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 30px;
+}

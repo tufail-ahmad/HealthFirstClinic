@@ -2,7 +2,7 @@
   width: 220px;
   font-size: 1.6rem;
   border-radius: 10px;
-  border: 1px solid var(--border-color);
+  border: none;
   font-weight: 500;
   background-color: #0a4f8b;
   color: var(--text-light);
@@ -12,8 +12,7 @@
 }
 
 .secondaryButton:hover {
-  background-color: white;
-  color: #000000;
+  background-color: #b90410;
 }
 
 /* min-width 481 and max-width 768px */
