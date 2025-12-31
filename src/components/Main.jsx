@@ -1,12 +1,9 @@
 import { Outlet } from "react-router-dom";
-import ScrollToTop from "./ScrollToTop";
-
-function Main() {
+function Main({ onOpenPopup }) {
   return (
-    <>
-      <ScrollToTop />
-      <Outlet />
-    </>
+    <main>
+      <Outlet context={onOpenPopup} />
+    </main>
   );
 }
 

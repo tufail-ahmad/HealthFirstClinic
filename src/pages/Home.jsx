@@ -4,7 +4,6 @@ import DoctorsCard from "../components/DoctorsCard";
 import HeroBanner from "../components/HeroBanner";
 import ServicesSection from "../components/ServicesSection";
 import styles from "./Home.module.css";
-import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -58,18 +57,12 @@ function Home() {
         <h2>Our Doctors</h2>
         <div className={styles["cards-container"]}>
           {doctorsData.slice(0, 3).map((doctor, index) => (
-            <Link
+            <DoctorsCard
+              variant="home"
+              doctor={doctor}
+              index={index}
               key={doctor.id}
-              to="/our-doctors"
-              state={{ scrollToDoctorId: doctor.id }}
-              style={{
-                textDecoration: "none",
-                color: "inherit",
-                flexBasis: "33%",
-              }}
-            >
-              <DoctorsCard variant="home" doctor={doctor} index={index} />
-            </Link>
+            />
           ))}
         </div>
       </div>

@@ -1,0 +1,51 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99999;
+}
+
+.form-box {
+  background: var(--primary-color);
+  padding: 24px;
+  width: 400px;
+  border-radius: 8px;
+}
+
+.closeBtn {
+  border: none;
+  background: transparent;
+  float: right;
+  color: red;
+  font-size: 1.4rem;
+  font-weight: 500;
+  position: relative;
+  top: -16px;
+  right: -8px;
+}
+
+.heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 5px 0;
+}
+
+label {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 3px;
+  color: var(--text-light);
+}
+
+.nameinpt-container {
+  display: flex;
+  gap: 5px;
+}
+
+#patient {
+  font-size: 1.5rem;
+  padding: 3px;
+}

@@ -1,6 +1,6 @@
 /*============================= Style for Home Page =============================*/
 .home {
-  height: 100%;
+  flex-basis: 33%;
   border-top: 5px solid #1e88e5;
   display: flex;
   flex-direction: column;

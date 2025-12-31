@@ -4,28 +4,9 @@ import { useLocation } from "react-router-dom";
 import styles from "./OurDoctors.module.css";
 import { doctorsData } from "../data/doctorsData";
 import DoctorsCard from "../components/DoctorsCard";
-import { useEffect } from "react";
 
 function OurDoctors() {
   const location = useLocation();
-
-  useEffect(() => {
-    // if doctor come from home page
-    const id = location.state?.scrollToDoctorId;
-    if (id) return;
-
-    const el = document.getElementById(
-      `doctor-${location.state.scrollToDoctorId}`
-    );
-    if (!el) return;
-
-    const top = el.getBoundingClientRect().top + window.pageYOffset;
-
-    window.scrollTo({
-      top,
-      behavior: "smooth",
-    });
-  }, []);
 
   return (
     <>

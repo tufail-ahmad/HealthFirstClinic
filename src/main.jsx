@@ -13,7 +13,7 @@ import PhysiotherapyRehabilitation from "./pages/services/Physiotherapy&Rehabili
 import GeneralLaparoscopicSurgery from "./pages/services/General&LaparoscopicSurgery.jsx";
 import RadiologyDiagnostics from "./pages/services/Radiology&Diagnostics.jsx";
 import PathologyLaboratoryTests from "./pages/services/Pathology&LaboratoryTests.jsx";
-
+import { AppointmentProvider } from "./store/AppointmentProvider";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -65,6 +65,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AppointmentProvider>
+      <RouterProvider router={router} />
+    </AppointmentProvider>
   </StrictMode>
 );
