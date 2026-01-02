@@ -9,17 +9,24 @@
 }
 
 .form-box {
-  background: var(--primary-color);
+  background: #1e88e593;
   padding: 24px;
   width: 400px;
   border-radius: 8px;
+  overflow-y: auto;
+  height: 70%;
+  scrollbar-width: thin;
+}
+
+.form-box::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .closeBtn {
   border: none;
   background: transparent;
   float: right;
-  color: red;
+  color: rgb(0, 0, 0);
   font-size: 1.4rem;
   font-weight: 500;
   position: relative;
@@ -31,21 +38,56 @@
   font-size: 2.2rem;
   font-weight: 700;
   margin: 5px 0;
+  color: rgba(8, 8, 102, 0.733);
 }
 
 label {
   font-size: 1.6rem;
   font-weight: 500;
-  margin-bottom: 3px;
+  margin: 5px 0;
   color: var(--text-light);
 }
 
-.nameinpt-container {
-  display: flex;
-  gap: 5px;
+.form-box input {
+  font-size: 1.6rem;
+  margin: 3px 0;
+  border: none;
+  padding: 2px 5px;
+  background: transparent;
+  color: white;
+  border-bottom: 2px solid white;
+  outline: none;
 }
 
-#patient {
-  font-size: 1.5rem;
-  padding: 3px;
+.form-box input::placeholder {
+  color: white;
+}
+
+.gender-container {
+  display: flex;
+  align-items: center;
+}
+
+.textarea {
+  width: 100%;
+  padding: 2px 8px;
+  background-color: transparent;
+  border-color: white;
+  outline: none;
+  resize: none;
+  font-size: 1.6rem;
+  color: white;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+}
+
+.textarea::placeholder {
+  font-size: 1.6rem;
+  color: white;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
