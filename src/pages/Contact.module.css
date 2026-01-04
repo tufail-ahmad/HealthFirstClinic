@@ -1,0 +1,6 @@
+.main-container {
+  padding: 20px 50px;
+  background-color: var(--bg-secondary);
+  display: flex;
+  gap: 50px;
+}

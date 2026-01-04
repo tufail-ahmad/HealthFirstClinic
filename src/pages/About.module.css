@@ -17,14 +17,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
   padding: 20px;
 }
 
 .card {
-  flex-basis: 30%;
-  height: 250px;
-  border: 1px solid black;
+  flex-basis: 29%;
+  height: 220px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0 0 10px 3px rgb(172, 171, 171);
   padding: 15px;
 }
 
@@ -45,4 +47,59 @@
 .card p {
   font-size: 1.8rem;
   line-height: 20px;
+  text-align: left;
+  margin: 0;
+}
+
+.btn-container {
+  margin-top: 20px;
+}
+
+.about-section2nd {
+  padding: 20px 60px;
+  display: flex;
+}
+
+.content-container {
+  flex-basis: 50%;
+  padding: 20px;
+}
+
+.content-container h2 {
+  font-size: 3.4rem;
+  margin-bottom: 20px;
+}
+
+.content-container ul li {
+  font-size: 1.8rem;
+}
+
+.img-container {
+  padding: 20px;
+}
+
+.img-container img {
+  border-radius: 20px;
+  box-shadow: 0 0 10px 5px rgb(223, 221, 221);
+}
+
+.about-section3rd {
+  padding: 40px;
+  background: var(--bg-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-section3rd h2 {
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.about-section3rd p {
+  font-size: 1.8rem;
+  color: var(--text-secondary);
+  width: 80%;
 }

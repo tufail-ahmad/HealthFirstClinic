@@ -47,17 +47,49 @@ function About() {
               our standards to serve you better.
             </p>
           </div>
-          <div className={styles.card} id={styles.card1}>
+          <div
+            className={styles.card}
+            id={styles.card1}
+            style={{ background: "#43a047" }}
+          >
             <div className={styles.imgContainer}>
-              <img src="/images/notes-with-pen.jpg" alt="notes-image" />
+              <img src="/images/notes-with-pen.png" alt="notes-image" />
             </div>
-            <h3>Ready to Begin?</h3>
-            <p>
+            <h3 style={{ color: "white" }}>Ready to Begin?</h3>
+            <p style={{ color: "white" }}>
               Start your journey to better health today with our expert team.
             </p>
-            <AppointmentBtn />
+            <div className={styles["btn-container"]}>
+              <AppointmentBtn />
+            </div>
           </div>
         </div>
+      </div>
+      <div className={styles["about-section2nd"]}>
+        <div className={styles["content-container"]}>
+          <h2>Why Choose HealthFirst Clinic?</h2>
+          <ul>
+            <li>✔ Experienced and qualified medical professionals</li>
+            <li>✔ Patient-focused and friendly environment</li>
+            <li>✔ Accurate diagnosis and personalized treatment plans</li>
+            <li>✔ Modern medical equipment and hygienic facilities</li>
+            <li>✔ Honest guidance and transparent consultation</li>
+          </ul>
+        </div>
+        <div className={styles["img-container"]}>
+          <img src="images/about_section_image.jpg" alt="image" />
+        </div>
+      </div>
+      <div className={styles["about-section3rd"]}>
+        <h2>Our Commitment to Patients</h2>
+        <p>
+          "We understand that visiting a clinic can be stressful. That’s why our
+          team ensures a comfortable, respectful, and supportive experience from
+          consultation to recovery. We believe in educating our patients so they
+          can make informed decisions about their health." <br />
+          "At HealthFirst Clinic, we don’t just treat symptoms — we care for
+          people."
+        </p>
       </div>
     </>
   );

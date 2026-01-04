@@ -49,11 +49,13 @@
   padding: 5px 10px;
   height: 35px;
   transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
 }
 
 .primaryButton:hover {
-  background-color: #0a4f8b;
-  border: 1px solid #0a4f8b;
+  background-color: #43a047;
+  border: 1px solid #43a047;
 }
 
 .rightColumn {

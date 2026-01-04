@@ -4,6 +4,7 @@ import DoctorsCard from "../components/DoctorsCard";
 import HeroBanner from "../components/HeroBanner";
 import ServicesSection from "../components/ServicesSection";
 import styles from "./Home.module.css";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -17,7 +18,9 @@ function Home() {
               and compassionate support for you and your family.
             </p>
             <div className={styles["button-container"]}>
-              <button className={styles.primaryButton}>Contact Us</button>
+              <Link to="/contact-us" className={styles.primaryButton}>
+                Contact Us
+              </Link>
               <AppointmentBtn />
             </div>
           </div>
