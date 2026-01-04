@@ -10,7 +10,7 @@
 
 .form-box {
   background: #1e88e593;
-  padding: 24px;
+  padding: 24px 24px 10px 24px;
   width: 400px;
   border-radius: 8px;
   overflow-y: auto;
@@ -68,26 +68,36 @@ label {
   align-items: center;
 }
 
-.textarea {
-  width: 100%;
-  padding: 2px 8px;
-  background-color: transparent;
-  border-color: white;
-  outline: none;
-  resize: none;
-  font-size: 1.6rem;
-  color: white;
-  scrollbar-width: thin;
-  scroll-behavior: smooth;
-}
-
-.textarea::placeholder {
-  font-size: 1.6rem;
-  color: white;
-}
-
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.servicesListContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn-container {
+  width: 100%;
+  text-align: center;
+  margin: 8px 0;
+}
+
+.btn-container button {
+  width: 30%;
+  padding: 2px 5px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: rgb(5, 5, 116);
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.btn-container button:hover {
+  background: rgb(4, 71, 4);
 }

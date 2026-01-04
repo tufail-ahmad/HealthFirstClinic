@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AppointmentContext } from "./AppointmentContext";
 
 export const AppointmentProvider = ({ children }) => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const openForm = () => {
     setOpen(true);

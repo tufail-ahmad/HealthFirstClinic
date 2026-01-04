@@ -18,17 +18,14 @@ export default function AppointmentForm({ onClose }) {
         <br />
         <label>Gender:</label>
         <div className={styles["gender-container"]}>
-          <label htmlFor="male">Male</label>
           <input
             type="radio"
             value="male"
             name="gender"
             id="male"
-            style={{ marginLeft: "5px" }}
+            style={{ marginRight: "5px" }}
           />
-          <label htmlFor="female" style={{ marginLeft: "5px" }}>
-            Female
-          </label>
+          <label htmlFor="male">Male</label>
           <input
             type="radio"
             value="female"
@@ -36,6 +33,9 @@ export default function AppointmentForm({ onClose }) {
             id="female"
             style={{ marginLeft: "5px" }}
           />
+          <label htmlFor="female" style={{ marginLeft: "5px" }}>
+            Female
+          </label>
         </div>
         <label htmlFor="age">Age:</label>
         <br />
@@ -63,18 +63,49 @@ export default function AppointmentForm({ onClose }) {
           style={{ width: "100%" }}
         />
         <br />
-        <label htmlFor="text">Message:</label>
+        <label htmlFor="department">
+          Which medical department do you want to make an appointment for?
+        </label>
         <br />
-        <textarea
-          name="message"
-          id="text"
-          spellCheck="true"
-          wrap="soft"
-          rows={6}
-          cols={60}
-          placeholder="Enter your message"
-          className={styles.textarea}
-        ></textarea>
+        <div className={styles.servicesListContainer}>
+          <input type="radio" name="" />
+          <label htmlFor="">General Surgery</label>
+        </div>
+        <div className={styles.servicesListContainer}>
+          <input type="radio" name="" />
+          <label htmlFor="">Laparoscopic Surgery</label>
+        </div>
+        <div className={styles.servicesListContainer}>
+          <input type="radio" name="" />
+          <label htmlFor="">Pediatrics</label>
+        </div>
+        <div className={styles.servicesListContainer}>
+          <input type="radio" name="" />
+          <label htmlFor="">Physiotherapy</label>
+        </div>
+        <div className={styles.servicesListContainer}>
+          <input type="radio" name="" />
+          <label htmlFor="">Orthopedic</label>
+        </div>
+        <div className={styles.servicesListContainer}>
+          <input type="radio" name="" />
+          <label htmlFor="">Rehabilitation</label>
+        </div>
+        <div className={styles.servicesListContainer}>
+          <input type="radio" name="" />
+          <label htmlFor="">Radiology</label>
+        </div>
+        <div className={styles.servicesListContainer}>
+          <input type="radio" name="" />
+          <label htmlFor="">Pathology</label>
+        </div>
+        <div className={styles.servicesListContainer}>
+          <input type="radio" name="" />
+          <label htmlFor="">Diagnostic</label>
+        </div>
+        <div className={styles["btn-container"]}>
+          <button type="submit">Submit</button>
+        </div>
       </form>
     </div>
   );
