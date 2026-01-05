@@ -117,7 +117,7 @@ export default function AddressBar() {
             rel="noopener noreferrer"
             aria-label="Social Link"
             className="p-2 rounded-md bg-primary-dark text-white hover:bg-white hover:text-primary-dark transition-colors duration-300 ease-in-out border border-primary-dark"
-            href="https://www.facebook.com/wsclinicindia/"
+            href="#"
             onMouseEnter={() => setFacebookHover(true)}
             onMouseLeave={() => setFacebookHover(false)}
           >
@@ -136,7 +136,7 @@ export default function AddressBar() {
             rel="noopener noreferrer"
             aria-label="Social Link"
             className="p-2 rounded-md bg-primary-dark text-white hover:bg-white hover:text-primary-dark transition-colors duration-300 ease-in-out border border-primary-dark"
-            href="https://www.instagram.com/wsclinic/"
+            href="#"
             onMouseEnter={() => setInstagramHover(true)}
             onMouseLeave={() => setInstagramHover(false)}
           >
@@ -155,7 +155,7 @@ export default function AddressBar() {
             rel="noopener noreferrer"
             aria-label="Social Link"
             className="p-2 rounded-md bg-primary-dark text-white hover:bg-white hover:text-primary-dark transition-colors duration-300 ease-in-out border border-primary-dark"
-            href="https://www.linkedin.com/company/ws-clinic/"
+            href="#"
             onMouseEnter={() => setTwitterHover(true)}
             onMouseLeave={() => setTwitterHover(false)}
           >
@@ -170,11 +170,10 @@ export default function AddressBar() {
             </svg>
           </a>
           <a
-            target="_blank"
             rel="noopener noreferrer"
             aria-label="Social Link"
             className="p-2 rounded-md bg-primary-dark text-white hover:bg-white hover:text-primary-dark transition-colors duration-300 ease-in-out border border-primary-dark"
-            href="https://www.youtube.com/@WsClinic"
+            href="#"
             onMouseEnter={() => setYoutubeHover(true)}
             onMouseLeave={() => setYoutubeHover(false)}
           >
