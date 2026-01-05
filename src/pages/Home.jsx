@@ -5,8 +5,17 @@ import HeroBanner from "../components/HeroBanner";
 import ServicesSection from "../components/ServicesSection";
 import styles from "./Home.module.css";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 function Home() {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+  const dotsRef = useRef(null);
   return (
     <>
       <HeroBanner>
@@ -68,6 +77,52 @@ function Home() {
             />
           ))}
         </div>
+        <div className={styles["cards-carousel"]}>
+          {/* Custom Previous Arrow */}
+          <button
+            ref={prevRef}
+            className="nav prev"
+            aria-label="Previous slide"
+          >
+            &#10094;
+          </button>
+          {/* Swiper */}
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={16}
+            slidesPerView={1}
+            loop={true} // infinite scroll
+            autoplay={{
+              delay: 3000, // 3 seconds
+              disableOnInteraction: false,
+            }}
+            pagination={{ clickable: true }} // dots
+            onSwiper={(swiper) => {
+              setTimeout(() => {
+                swiper.params.navigation.prevEl = prevRef.current;
+                swiper.params.navigation.nextEl = nextRef.current;
+                swiper.params.pagination.el = dotsRef.current;
+                swiper.navigation.destroy();
+                swiper.navigation.init();
+                swiper.navigation.update();
+              });
+            }}
+          >
+            {doctorsData.slice(0, 3).map((doctor, index) => {
+              return (
+                <SwiperSlide key={doctor.id}>
+                  <DoctorsCard variant="home" doctor={doctor} index={index} />;
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+          {/* Custom Next Arrow */}
+          <button ref={nextRef} className="nav next">
+            &#10095;
+          </button>
+        </div>
+        {/* Custom Dots */}
+        <div ref={dotsRef} className="custom-dots"></div>
       </div>
     </>
   );

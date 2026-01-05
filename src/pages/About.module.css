@@ -23,7 +23,7 @@
 
 .card {
   flex-basis: 29%;
-  height: 220px;
+  height: 240px;
   border: 1px solid var(--border-color);
   border-radius: 10px;
   box-shadow: 0 0 10px 3px rgb(172, 171, 171);

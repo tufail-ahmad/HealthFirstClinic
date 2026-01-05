@@ -61,6 +61,49 @@
   font-size: 2rem;
 }
 
+/* min-width 1025 and max-width 1200px */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  .card-wrapper {
+    flex-basis: 32%;
+    padding: 15px;
+  }
+
+  .img-container {
+    width: 22%;
+  }
+
+  .card-wrapper h3 {
+    font-size: 2.2rem;
+  }
+
+  .card-wrapper p {
+    font-size: 1.4rem;
+    line-height: 16px;
+    text-align: center;
+    height: 40px;
+    width: 300px;
+  }
+
+  .readMoreBtn {
+    padding: 3px 10px;
+    font-size: 1.4rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    background: #0a4f8b;
+    color: var(--text-light);
+    transition: all 0.2s ease;
+  }
+
+  .readMoreBtn:hover {
+    background: var(--secondary-color);
+  }
+
+  .readMoreBtn span {
+    font-size: 1.8rem;
+  }
+}
+
 /* min-width 481 and max-width 768px */
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .card-wrapper {

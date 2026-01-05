@@ -1,9 +1,8 @@
-*{
+* {
   margin: 0;
   padding: 0;
   font-family: "Poppins" sans-serif;
   scroll-behavior: smooth;
-
 }
 
 html {
@@ -25,16 +24,15 @@ html {
   }
 }
 
-
 :root {
   /* Brand Colors */
-  --primary-color: #1e88e5;      /* Blue (Medical Trust) */
-  --secondary-color: #43a047;    /* Green (Health) */
+  --primary-color: #1e88e5; /* Blue (Medical Trust) */
+  --secondary-color: #43a047; /* Green (Health) */
 
   /* Text Colors */
-  --text-primary: #212121;       /* Main text */
-  --text-secondary: #616161;     /* Paragraph text */
-  --text-light: #ffffff;         /* White text */
+  --text-primary: #212121; /* Main text */
+  --text-secondary: #616161; /* Paragraph text */
+  --text-light: #ffffff; /* White text */
 
   /* Background Colors */
   --bg-primary: #ffffff;
@@ -49,4 +47,3 @@ html {
   --error-color: #d32f2f;
   --warning-color: #f9a825;
 }
-

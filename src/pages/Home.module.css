@@ -14,11 +14,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 200px;
+  padding-left: 180px;
 }
 
 .mainHeading {
-  font-size: 3.6rem;
+  font-size: 3.5rem;
   color: #042d66e5;
   font-weight: 700;
   margin-bottom: -8px;
@@ -127,6 +127,53 @@
   gap: 20px;
 }
 
+.cards-carousel {
+  display: none;
+}
+
+/* min-width 1025 and max-width 1200px */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  /*=============== Hero Banner Styling ==================*/
+
+  .leftColumn {
+    padding-left: 150px;
+  }
+
+  .mainHeading {
+    font-size: 3.4rem;
+  }
+
+  .leftColumn p {
+    margin: 12px 0;
+  }
+
+  .button-container {
+    gap: 10px;
+  }
+
+  /*=============== About Section Styling ==================*/
+  .about-section {
+    gap: 20px;
+  }
+
+  .imgContainer {
+    padding: 10px;
+  }
+
+  .imgContainer img {
+    height: 360px;
+    border-radius: 15px;
+  }
+
+  .contentContainer {
+    padding: 10px;
+  }
+
+  .contentContainer p {
+    line-height: 20px;
+  }
+}
+
 /* min-width 481 and max-width 768px */
 @media screen and (min-width: 481px) and (max-width: 768px) {
   /*=============== Hero Banner Styling ==================*/
@@ -197,6 +244,14 @@
   .contentContainer p {
     font-size: 1.6rem;
     line-height: 15px;
+  }
+
+  /*=============== Doctor Section Styling ==================*/
+  .cards-container {
+    display: none;
+  }
+
+  .cards-carousel {
   }
 }
 

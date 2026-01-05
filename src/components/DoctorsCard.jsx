@@ -45,8 +45,8 @@ export default function DoctorsCard({ doctor, index, variant }) {
             </ul>
           </>
         )}
-        <AppointmentBtn />
       </div>
+      <AppointmentBtn />
     </div>
   );
 }
