@@ -68,11 +68,10 @@
   transition: all 0.3s ease-in-out;
 }
 
-.iconContainer svg {
+.svgIcon {
   fill: #ffffff;
   height: 100%;
   width: 100%;
-  transition: all 0.2s ease-in;
 }
 
 .iconContainer a:hover {
@@ -81,6 +80,8 @@
   background: transparent;
 }
 
-.iconContainer svg:hover {
+.hover {
   fill: #003f7d;
+  height: 100%;
+  width: 100%;
 }
